@@ -7,6 +7,8 @@ class Vector:
     def __init__(self, str, end):
         self._x = str._x - end._x
         self._y = str._y - end._y
+        self._str = str
+        self._end = end
         return
 
     def cros_product(self, another_vector):

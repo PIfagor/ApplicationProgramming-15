@@ -31,7 +31,7 @@ class Polygon:
         return
 
     def get_area(self):
-       sums = 0
+       sums = 0.
        for i in range(len(self.ordered_points)-1):
            sums += (self.ordered_points[i+1]._y + self.ordered_points[i]._y)/2*(self.ordered_points[i+1]._x - self.ordered_points[i]._x)
 
@@ -52,9 +52,21 @@ class Polygon:
         count = 0
 
         for i in range(len(self.ordered_points)-1):
-            if y - self.ordered_points[i]._y == 0:
+            if (x < self.ordered_points[i]._x or x < self.ordered_points[i+1]._x) and y - self.ordered_points[i]._y == 0:
                     if i != 0 and (y - self.ordered_points[i-1]._y) * (y - self.ordered_points[i+1]._y) < 0:
                         count += 1
             elif (x < self.ordered_points[i]._x or x < self.ordered_points[i+1]._x) and ((y - self.ordered_points[i]._y) * (y - self.ordered_points[i+1]._y)) < 0 :
                 count += 1
         return count % 2 != 0
+
+    def write_to_file(self):
+        f = open('result.txt','w')
+        write_point = self.ordered_points
+        del write_point[-1]
+        size = len(write_point)
+        f.write(str(size)+'\n')
+        for point in write_point:
+            f.write(str(point._x)+' '+str(point._y)+'\n')
+
+
+        f.close() # you can omit in most cases as the destructor will call it

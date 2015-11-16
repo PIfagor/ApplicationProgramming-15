@@ -45,10 +45,11 @@ def find_min_new (a,b,c,d):
       ab = Vector(a, b)
       cd = Vector(c, d)
 
-      if ab.is_intersection(cd) == 0:
+      res_intersection = ab.is_intersection(cd)
+      if res_intersection == 0:
             print("One end of segment belongs another segment")
             return ab.length()
-      elif ab.is_intersection(cd) < 0:
+      elif res_intersection < 0:
             print("Not intersection")
             return ab.length()
       else:

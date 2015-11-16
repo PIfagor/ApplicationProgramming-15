@@ -31,8 +31,8 @@ class Point3D:
         assert isinstance(another_point, Point3D), "%r is not a Point" % another_point
         return sqrt((self._x - another_point._x)*(self._x - another_point._x) + (self._y - another_point._y)*(self._y - another_point._y) + (self._z - another_point._z)*(self._z - another_point._z))
 
-    def showing(self):
-        print("\nPoint:")
+    def showing(self, name):
+        print("\nPoint: " + name)
         print("X: " + str (self._x))
         print("Y: " + str(self._y))
         print("Z: " + str(self._z))

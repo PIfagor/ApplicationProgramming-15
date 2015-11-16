@@ -31,8 +31,8 @@ class Vector:
          z2 = self.cros_product(Vector(a, d))
 
 
-         assert z1*z2 != 0, " one Point belong another Vector"
-         assert  z1*z2 < 0, "Vectors never intersaction"
+         #assert z1*z2 != 0, " one Point belong another Vector"
+         #assert  z1*z2 < 0, "Vectors never intersaction"
 
          px = c._x + (d._x - c._x) * abs(z1)/abs(z2-z1)
          py = c._y + (d._y - c._y) * abs(z1)/abs(z2-z1)

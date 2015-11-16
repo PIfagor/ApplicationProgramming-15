@@ -31,10 +31,10 @@ def testing(number_test):
 
 def main():
 
-    a = Point(0., 0.)
-    b = Point(9., 9.)
-    c = Point(6., 5.)
-    d = Point(2., 10.)
+    a = Point(-35., 3.)
+    b = Point(-29., 11.)
+    c = Point(-30., 35.)
+    d = Point(-38., -5.)
 
     # v1 = Vector(a,b)
     # v2 = Vector(c,d)
@@ -48,15 +48,18 @@ def main():
     # print(find_min(a, b, c, d))
     print(find_min_new(a, b, c, d))
     # print(find_min(points[0], points[1], points[2], points[3]))
-    print(find_min_new(points[0], points[1], points[2], points[3]))
+   # print(find_min_new(points[0], points[1], points[2], points[3]))
 
-    spider = Point3D(2., 0., 3.)
-    fly = Point3D(3., 5., 3.)
-    pall = Point3D(10., 5., 6.)
-    spider_man = SpiderAndFly(pall, spider, fly)
-    print(spider_man.find_min_distanse())
-    spider_man._first_itersection_point.showing()
-    spider_man._second_itersection_point.showing()
+    # block of SPIDER
+    # spider = Point3D(4., 0., 3.)
+    # fly = Point3D(0., 10., 5.)
+    # pall = Point3D(4., 10., 5.)
+    # spider_man = SpiderAndFly(pall, spider, fly)
+    #
+    # print ("Minamal distance")
+    # print(spider_man.find_min_distanse())
+    # spider_man._first_itersection_point.showing("of First intersection")
+    # spider_man._second_itersection_point.showing("of Second intersection")
     return
 
 if __name__ == "__main__":

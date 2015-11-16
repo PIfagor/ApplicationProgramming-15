@@ -15,6 +15,7 @@ class Point:
         return sqrt((self._x - another_point._x)*(self._x - another_point._x) + (self._y - another_point._y)*(self._y - another_point._y) )
 
 
+
 class Point3D:
     def __init__(self, x, y,z):
         self._x = x
@@ -29,3 +30,9 @@ class Point3D:
     def distanse(self, another_point):
         assert isinstance(another_point, Point3D), "%r is not a Point" % another_point
         return sqrt((self._x - another_point._x)*(self._x - another_point._x) + (self._y - another_point._y)*(self._y - another_point._y) + (self._z - another_point._z)*(self._z - another_point._z))
+
+    def showing(self):
+        print("\nPoint:")
+        print("X: " + str (self._x))
+        print("Y: " + str(self._y))
+        print("Z: " + str(self._z))

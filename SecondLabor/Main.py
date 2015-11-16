@@ -50,12 +50,13 @@ def main():
     # print(find_min(points[0], points[1], points[2], points[3]))
     print(find_min_new(points[0], points[1], points[2], points[3]))
 
-    spider = Point3D(5., 0., 2.)
-    fly = Point3D(7, 10., 3.)
-    pall = Point3D(10., 10., 10.)
+    spider = Point3D(2., 0., 3.)
+    fly = Point3D(3., 5., 3.)
+    pall = Point3D(10., 5., 6.)
     spider_man = SpiderAndFly(pall, spider, fly)
     print(spider_man.find_min_distanse())
-
+    spider_man._first_itersection_point.showing()
+    spider_man._second_itersection_point.showing()
     return
 
 if __name__ == "__main__":

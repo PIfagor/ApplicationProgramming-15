@@ -46,6 +46,7 @@ class Polygon:
                     self.points_arr[j+1] = temp
         return
 
+
     def is_point_belongs(self,pointt):
         y = pointt._y
         x = pointt._x
@@ -53,11 +54,18 @@ class Polygon:
 
         for i in range(len(self.ordered_points)-1):
             if (x < self.ordered_points[i]._x or x < self.ordered_points[i+1]._x) and y - self.ordered_points[i]._y == 0:
-                    if i != 0 and (y - self.ordered_points[i-1]._y) * (y - self.ordered_points[i+1]._y) < 0:
+                    if i != 0 and (y - self.ordered_points[i-1]._y) * (y - self.ordered_points[i+1]._y) <= 0:
                         count += 1
             elif (x < self.ordered_points[i]._x or x < self.ordered_points[i+1]._x) and ((y - self.ordered_points[i]._y) * (y - self.ordered_points[i+1]._y)) < 0 :
                 count += 1
         return count % 2 != 0
+
+
+    # def is_point_bel(self,p):
+    #     count = 0
+    #     v1 = Vector(Point()
+    #     for i in range(len(self.ordered_points)-1):
+    #         count += p.y - self.ordered_points[i]._y) * (y - self.ordered_points[i+1]._y
 
     def write_to_file(self):
         f = open('result.txt','w')

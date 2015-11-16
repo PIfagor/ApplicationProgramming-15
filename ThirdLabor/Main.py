@@ -8,7 +8,9 @@ def main():
 
     size = True
     n = 0
-    #points = [Point(2, 1), Point(2, 3), Point(4, 5), Point(6, 3), Point(6, 1), Point(5, 1), Point(4, 2)]
+    #pointt = [Point(0, 0), Point(1, 3), Point(1, 2), Point(2, 3), Point(4, 1), Point(5, 1), Point(5, 0)]
+    pointt = [Point(0, -4), Point(0, 2), Point(-3, -1), Point(3, -1), Point(-1, 0), Point(1, -2), Point(1, 0) , Point(-1, -2)]
+    point = [Point(0, 5), Point(5, 0), Point(0, -5), Point(-5, 0)]
     points = []
     counter = 0
     control_point = 0
@@ -29,10 +31,14 @@ def main():
     #     print(i._x   )
     #     print(  i._y)
 
-    poly = Polygon(points, False)
+    control_point = Point(2,2)
+
+    poly = Polygon(pointt, False)
     print(poly.get_area())
 
     print(poly.is_point_belongs(control_point))
+    print(poly.is_point_belongs_another(control_point))
+
 
     poly.write_to_file()
 

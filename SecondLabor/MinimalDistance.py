@@ -1,11 +1,22 @@
 from Vector import Vector
 __author__ = 'Wise'
 
+
 def min(a,b):
     if a < b :
         return a
     else:
         return b
+
+
+def intersect(a, b, c, d):
+    if a > b :
+       a,b = b,a
+    if c > d:
+       c,d = d,c
+    return max(a, c) <= min(b, d)
+
+
 
 def find_min(a, b, c, d):
     ab = Vector(a, b)
@@ -18,9 +29,32 @@ def find_min(a, b, c, d):
 
     bd = Vector(b, d)
 
-    if ab.cros_product(ac)*ab.cros_product(ad) <= 0 & cd.cros_product(ca)*cd.cros_product(cb) <= 0:
+    if intersect(a,b,c,d):
+        print("Not intersection")
+        return ab.length()
+
+    elif ab.cros_product(ac)*ab.cros_product(ad) <= 0 and cd.cros_product(ca)*cd.cros_product(cb) <= 0:
         print("Intersection")
         return min(ac.length()+cb.length(), ad.length()+bd.length())
     else:
         print("Not intersection")
         return ab.length()
+
+
+def find_min_new (a,b,c,d):
+      ab = Vector(a, b)
+      cd = Vector(c, d)
+
+      if ab.is_intersection(cd) == 0:
+            print("One end of segment belongs another segment")
+            return ab.length()
+      elif ab.is_intersection(cd) < 0:
+            print("Not intersection")
+            return ab.length()
+      else:
+            bd = Vector(b, d)
+            ad = Vector(a, d)
+            cb = Vector(c, b)
+            ac = Vector(a, c)
+            print("Intersection")
+            return min(ac.length()+cb.length(), ad.length()+bd.length())
